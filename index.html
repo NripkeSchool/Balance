@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Balance: The Daily Game</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
+</head>
+
+
+<body onload="loadBoard()">
+
+<div class="topScreen">
+    <a href="https://thequakerquill.org/"><img src="./QuakerQuillImg.png" alt="Home" class="home" ></a>
+    <h1> Balance </h1>
+    <p class="question"> ? </p>
+</div>
+
+
+<div class="board">
+<table>
+    <!-- First row -->
+    <tr>
+        <td id="0" type="button" onclick="testButton(id)"></td>
+        <td id="1" type="button" onclick="testButton(id)"></td>
+        <td id="2" type="button" onclick="testButton(id)"></td>
+        <td id="3" type="button" onclick="testButton(id)"></td>
+        <td id="4" type="button" onclick="testButton(id)"></td>
+    </tr>
+    <!-- Second row -->
+    <tr>
+        <td id="5" type="button" onclick="testButton(id)"></td>
+        <td id="6" type="button" onclick="testButton(id)"></td>
+        <td id="7" type="button" onclick="testButton(id)"></td>
+        <td id="8" type="button" onclick="testButton(id)"></td>
+        <td id="9" type="button" onclick="testButton(id)"></td>
+    </tr>
+    <!-- Third row -->
+    <tr>
+        <td id="10" type="button" onclick="testButton(id)"></td>
+        <td id="11" type="button" onclick="testButton(id)"></td>
+        <td id="12" type="button" onclick="testButton(id)"></td>
+        <td id="13" type="button" onclick="testButton(id)"></td>
+        <td id="14" type="button" onclick="testButton(id)"></td>
+    </tr>
+    <!-- Fourth row -->
+    <tr>
+        <td id="15" type="button" onclick="testButton(id)"></td>
+        <td id="16" type="button" onclick="testButton(id)"></td>
+        <td id="17" type="button" onclick="testButton(id)"></td>
+        <td id="18" type="button" onclick="testButton(id)"></td>
+        <td id="19" type="button" onclick="testButton(id)"></td>
+    </tr>
+    <!-- Fifth row -->
+    <tr>
+        <td id="20" type="button" onclick="testButton(id)"></td>
+        <td id="21" type="button" onclick="testButton(id)"></td>
+        <td id="22" type="button" onclick="testButton(id)"></td>
+        <td id="23" type="button" onclick="testButton(id)"></td>
+        <td id="24" type="button" onclick="testButton(id)"></td>
+    </tr>
+</table>
+
+</div>
+
+<div class="progress-container">
+    <div class="progress-bar" id="progressBar" style="height: 30px;">0%</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');*/
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@500&family=Playfair+Display:wght@400;800&display=swap');
+
+
+/* Centering the table */
+body {
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+    margin: 0;
+    /*border: 2px solid black;*/
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 5px; /* This will create spacing between the table cells */
+    border-width: 0px;
+}
+
+/* Styling individual cells */
+td {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid black;
+    padding: 15px; /* This provides padding within each table cell */
+    font-family: 'Karla', sans-serif;
+    font-size: 25px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+h1 {
+    text-align: center;
+    width: 85%;
+    height: 6vh;
+    font-size: 6vh;
+    /*border: 2px solid black;*/
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', serif;
+}
+
+.progress-bar {
+    width: 75%;
+    height: 30px; /* Initial height of the progress bar */
+    background-color: #4CAF50;
+    border-color: black;
+    border-radius: 5px;
+    border-width: 2px;
+    text-align: center;
+    line-height: 30px; /* Centering the progress text vertically */
+    font-weight: bold;
+    font-family: 'Karla', sans-serif;
+}
+
+.progress-container {
+    width: 35%; /* Set the width of the progress bar */
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    margin: auto; /* Centering the progress bar */
+    border: 1px solid black;
+}
+
+.topScreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6vh;
+    margin: 0;
+    border-bottom: 2px solid black;
+    padding-bottom: 2vh;
+    /*border: 2px solid black;*/
+}
+
+.home {
+    height: 6vh;
+    width: 6vh;
+    padding-top: 2vh;
+}
+
+.question {
+    height: 6vh;
+    width: 6vh;
+    padding-top: 2vh;
+}
