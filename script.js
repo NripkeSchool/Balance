@@ -32,6 +32,7 @@ var torqueY = 0;
 var currentMove = 1;
 var pivotPoint = 12;
 var maxTorque = 10;
+var blockOrder = [];
 function loadBoard()
 {
     /* Later this will be PHP*/
@@ -47,6 +48,17 @@ function loadBoard()
     {
         updateSquare(i, board[i])
     }
+
+    for (var i = 0; i<25; i++)
+    {
+        blockOrder[i] = i+1;
+    }
+
+    document.getElementById("np1").textContent = blockOrder[currentMove-1];
+    document.getElementById("np1").style.background = colors[blockOrder[currentMove-1]];
+
+    document.getElementById("np2").textContent = blockOrder[currentMove];
+    document.getElementById("np2").style.background = colors[blockOrder[currentMove]];
 }
 
 function getRow(box)
@@ -61,7 +73,7 @@ function getCol(box)
 
 function cT(id)
 {
-    board[id] = currentMove;
+    board[id] = blockOrder[currentMove-1];
     torqueX = 0;
     torqueY = 0;
 
@@ -131,10 +143,25 @@ function testButton(id)
 
     if (cT(id) > maxTorque) {element.classList.add("incorrectSpot"); return;}
 
-    var weight = currentMove;
+    makeMove(id);
+    
+    element.classList.add("validSpot");
+}
+
+function makeMove(id)
+{
+    var weight = blockOrder[currentMove-1]; //Get current block
     updateSquare(id, weight);
+
     currentMove++;
     maxTorque = 10 + currentMove/2;
+    
     computeTorque();
-    element.classList.add("validSpot");
+
+    // Update the "Next-Move" icons
+    document.getElementById("np1").textContent = blockOrder[currentMove-1];
+    document.getElementById("np1").style.background = colors[blockOrder[currentMove-1]];
+
+    document.getElementById("np2").textContent = blockOrder[currentMove];
+    document.getElementById("np2").style.background = colors[blockOrder[currentMove]];
 }
