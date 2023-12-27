@@ -17,7 +17,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 75vh;
+    height: 50vh;
     margin: 0;
     /*border: 2px solid black;*/
 }
@@ -34,7 +34,7 @@ td {
     height: 50px;
     text-align: center;
     vertical-align: middle;
-    border: 1px solid black;
+    border: 2px solid black;
     padding: 15px; /* This provides padding within each table cell */
     font-family: 'Karla', sans-serif;
     font-size: 25px;
@@ -85,6 +85,50 @@ h1 {
     /*border: 2px solid black;*/
 }
 
+.nextPiece {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  margin: 0;
+  margin-top: 6vh;
+  margin-bottom: 2vh;
+  /*border: 2px solid black;*/
+}
+
+.np1 {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  vertical-align: middle;
+  border: 2px solid black;
+  padding: 15px; /* This provides padding within each table cell */
+  font-family: 'Karla', sans-serif;
+  font-size: 25px;
+  border-radius: 10px;
+  font-weight: bold;
+  margin-right: 1vh;
+}
+
+.np2 {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  vertical-align: middle;
+  border: 2px solid black;
+  padding: 15px; /* This provides padding within each table cell */
+  font-family: 'Karla', sans-serif;
+  font-size: 25px;
+  border-radius: 10px;
+  font-weight: bold;
+  margin-right: 1vh;
+}
+
+.nextText {
+  font-family: 'Karla', sans-serif;
+  font-size: 25px;
+}
+
 .home {
     height: 6vh;
     width: 6vh;
@@ -96,3 +140,42 @@ h1 {
     width: 6vh;
     padding-top: 2vh;
 }
+
+.incorrectSpot {
+    animation: jiggle 1s;
+  }
+  
+  @keyframes jiggle {
+    0% {
+      rotate: 0deg;
+      border: 2px solid black;
+    }
+    33% {
+      rotate: 11deg;
+      border: 2px solid red;
+    }
+    66% {
+      rotate: -11deg;
+      border: 2px solid red;
+    }
+    100% {
+      rotate: 0deg;
+      border: 2px solid black;
+    }
+  }
+
+  .validSpot {
+    animation: large 1s;
+  }
+  
+  @keyframes large {
+    0% {
+        font-size: 25px;
+    }
+    50% {
+        font-size: 35px;
+    }
+    100% {
+        font-size: 25px;
+    }
+  }

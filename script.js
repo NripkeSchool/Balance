@@ -59,6 +59,28 @@ function getCol(box)
     return box % 5;
 }
 
+function cT(id)
+{
+    board[id] = currentMove;
+    torqueX = 0;
+    torqueY = 0;
+
+    for (var i = 0; i<25; i++)
+    {
+        var xRadius = getCol(i) - getCol(pivotPoint);
+        var yRadius = getRow(pivotPoint)-getRow(i);
+        torqueX += xRadius*board[i];
+        torqueY += yRadius*board[i];
+    }
+    
+    board[id] = 0;
+
+    var largeTorque = 0;
+
+    if (Math.abs(torqueX) > Math.abs(torqueY)) {largeTorque=Math.abs(torqueX);}else {largeTorque=Math.abs(torqueY);}
+    return largeTorque;
+}
+
 function computeTorque()
 {
     /*
@@ -87,6 +109,7 @@ function computeTorque()
     if (Math.abs(torqueX) > Math.abs(torqueY)) {largeTorque=Math.abs(torqueX);}else {largeTorque=Math.abs(torqueY);}
 
     document.getElementById("progressBar").style.width = (largeTorque/maxTorque)*100 + "%";
+    document.getElementById("progressBar").textContent = Math.floor((largeTorque/maxTorque)*100) + "%";
 }
 
 function updateSquare(id, weight)
@@ -98,9 +121,20 @@ function updateSquare(id, weight)
 
 function testButton(id)
 {
+    if (board[id] != 0) {return;}
+
+    var element = document.getElementById(id);
+    if (element.classList.contains("incorrectSpot")) {element.classList.remove("incorrectSpot");}
+    if (element.classList.contains("validSpot")) {element.classList.remove("validSpot");}
+
+    void element.offsetWidth;
+
+    if (cT(id) > maxTorque) {element.classList.add("incorrectSpot"); return;}
+
     var weight = currentMove;
     updateSquare(id, weight);
     currentMove++;
     maxTorque = 10 + currentMove/2;
     computeTorque();
+    element.classList.add("validSpot");
 }
